@@ -1,0 +1,20 @@
+body{
+  margin: 0%;
+  padding: 0%;
+}
+html {
+  margin: 0%;
+  padding: 0%;
+}
+
+.centralPage{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.homeImage {
+  width: 50%;
+  height: 90vh;
+}

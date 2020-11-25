@@ -1,0 +1,18 @@
+.left-side{
+  flex:1 1 0;
+  margin-left: 10%;
+  padding-right: 10%;
+
+} 
+.left-side * {
+  margin-bottom: 50px;
+}
+.left-side p{
+  color: rgb(137, 137, 139);
+}
+
+button{
+  padding: 10px;
+  background-color: rgba(49, 128, 49, 0.616);
+  border: 0px;
+}
