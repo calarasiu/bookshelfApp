@@ -1,6 +1,6 @@
 import books from '../books';
 
-export default function setBooks() {
+export function setBooks() {
   return {
     type: 'SET_BOOKS',
     payload: books

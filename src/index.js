@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import {createStore, combineReducers}from 'redux';
 
-import booksReducer from './reducers/booksReducer';
+import booksReducer from './reducers/books_reducer';
 
 const reducers = combineReducers({
   books: booksReducer
