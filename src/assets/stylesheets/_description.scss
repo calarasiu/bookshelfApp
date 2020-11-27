@@ -1,0 +1,24 @@
+.left-side{
+  flex:1 1 0;
+  justify-content: flex-start;
+  margin-left: 10%;
+  padding-right: 10%;
+  margin-top: 1rem;
+
+} 
+.left-side * {
+  margin-bottom: 50px;
+}
+.left-side p{
+  color: rgb(137, 137, 139);
+}
+
+button{
+  padding: 16px;
+  background-color: #61b15a;
+  border: 0px;
+  font-weight: bold;
+  font-size: large;
+  color: #ffffff;
+  -webkit-text-stroke: 0.4px black;
+}

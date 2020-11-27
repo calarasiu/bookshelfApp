@@ -1,13 +1,11 @@
 import React from 'react';
-import './description.scss'
 
 function Description (){
   return (
     <div className="left-side">
-      <p>Essentials</p>
-      <h1>All you need to stay in the loop</h1>
-      <p>Handcrafted products for men, created with natural ingredients from the Mediterranean</p>
-      <button>See products</button>
+      <h1>All you need to complete that reading list</h1>
+      <p>Once you read it, a book will end up on the self and eventually it will never be opened again. But what about exchanging it for the next read on your list.</p>
+      <button>explore options</button>
     </div>
   )
 }

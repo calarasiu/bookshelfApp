@@ -51,6 +51,6 @@ export default [
     "Language": "english",
     "Genre": "non-fiction",
     "Description": "https://en.wikipedia.org/wiki/The_Pragmatic_Programmer",
-    "Photo":"https://res.cloudinary.com/practicaldev/image/fetch/s--6HrgunuZ--/c_imagga_scale,f_auto,fl_progressive,h_720,q_auto,w_1280/https://thepracticaldev.s3.amazonaws.com/i/tbxwbau1rvcat3td35sh.jpg"
+    "Photo":"https://images-na.ssl-images-amazon.com/images/I/41as+WafrFL._SX258_BO1,204,203,200_.jpg"
   }
 ];

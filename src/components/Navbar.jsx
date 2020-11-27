@@ -1,5 +1,4 @@
 import React from 'react';
-import './navbar.scss'
 
 function Navbar() {
   return (
@@ -12,7 +11,7 @@ function Navbar() {
         <h1>//|Bookshelf</h1>
       </div>
       <div className="nav right flex">
-        <p>Instructions</p>
+        <p>About</p>
         <p>Account</p>
       </div>
   </div>

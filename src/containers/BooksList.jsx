@@ -9,12 +9,14 @@ class BooksList extends Component {
     this.props.setBooks()
   }
   render(){
-    const books = Array.from(this.props.books);
+    const books = this.props.books;
+    
     return(
       <div className="booksList">
-        {books.map((book, index) => {
+        {console.log(books.length)}
+        {/* {books.map((book, index) => {
           return <Book key={index} book={book} />;
-        })}
+        })} */}
       </div>
     )
   }
