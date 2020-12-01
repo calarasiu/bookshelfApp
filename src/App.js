@@ -1,4 +1,10 @@
 import React from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 import Navbar from './components/Navbar';
 import Description from './components/Description';
 import BooksList from './containers/BooksList';
@@ -7,17 +13,19 @@ import BooksList from './containers/BooksList';
 
  function App() {
   return (
-    <div className="App">
+    <Router>
+      <div className="App">
       <Navbar />
       <div className="centralPage">
         <Description />
         <img src={image} className = "homeImage" alt=""/>
       </div>
       <div className="books">
-        <BooksList />
+          <Route path="/books" component = {BooksList} exact/>
       </div>
 
-    </div>
+      </div>
+    </Router>
   );
 }
 

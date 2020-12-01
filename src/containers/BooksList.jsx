@@ -5,22 +5,33 @@ import { connect } from 'react-redux';
 import { setBooks } from '../actions/index';
 
 class BooksList extends Component {
+  constructor(){
+    super()
+    this.state={
+      books:[]
+    }
+  }
   componentWillMount(){
-    this.props.setBooks()
+  fetch("https://www.googleapis.com/books/v1/volumes?q=title:motivation")
+  .then(function (res) {
+    return res.json();
+  })
+  .then((result)=>{
+    let items = result.items;
+    this.setState({books:items})
+  });
   }
-  render(){
-    const books = this.props.books;
-    
-    return(
-      <div className="booksList">
-        {console.log(books.length)}
-        {/* {books.map((book, index) => {
-          return <Book key={index} book={book} />;
-        })} */}
-      </div>
-    )
+    render(){
+        return(
+          <div className="booksList">
+          
+            {this.state.books.map((book, index)=>{
+              return <Book key = {index} book= {book}/>
+            })}
+        </div>
+      )
+    }
   }
-}
 
 function mapStateToProps(state){
   return{

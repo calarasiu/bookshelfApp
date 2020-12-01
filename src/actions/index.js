@@ -2,7 +2,7 @@
 
 export function setBooks() {
   let books = [];
-  fetch("https://www.googleapis.com/books/v1/volumes?q=isbn:0747532699")
+  const promise = fetch("https://www.googleapis.com/books/v1/volumes?q=isbn:0747532699")
   .then(function (res) {
     return res.json();
   })
