@@ -25,12 +25,13 @@ class BooksList extends Component {
   }
 
     searchFor = (event)=>{
+      console.log(event.target.value);
       this.setState({query:event.target.value});
     }
     render(){
         return(
           <div className="booksPage">
-            <SearchBar searchFor={this.searchBooks}/>
+            <SearchBar searchBooks={this.searchFor}/>
             <div className="booksList">
               {this.state.books.map((book, index)=>{
                 return <Book key = {index} book= {book}/>
