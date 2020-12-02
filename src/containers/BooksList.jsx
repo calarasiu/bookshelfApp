@@ -10,28 +10,36 @@ class BooksList extends Component {
     super()
     this.state={
       books:[],
-      query:""
+      query:"productivity"
     }
   }
+  getBooks=()=>{
+    fetch(`https://www.googleapis.com/books/v1/volumes?q=title:${this.state.query}`)
+    .then(function (res) {
+      return res.json();
+    })
+    .then((result)=>{
+      let items = result.items;
+      this.setState({books:items})
+    });
+    
+  }
   componentWillMount(){
-  fetch(`https://www.googleapis.com/books/v1/volumes?q=title:${this.state.query}`)
-  .then(function (res) {
-    return res.json();
-  })
-  .then((result)=>{
-    let items = result.items;
-    this.setState({books:items})
-  });
+    this.getBooks();
   }
 
     searchFor = (event)=>{
       console.log(event.target.value);
       this.setState({query:event.target.value});
+      this.getBooks();
     }
     render(){
         return(
           <div className="booksPage">
             <SearchBar searchBooks={this.searchFor}/>
+            {/* <div className = "searchBar" >
+              <input type="search" id="mySearch" name="q" placeholder="Search for your next read..." onChange = {this.searchFor}/>
+            </div> */}
             <div className="booksList">
               {this.state.books.map((book, index)=>{
                 return <Book key = {index} book= {book}/>
