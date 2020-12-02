@@ -10,11 +10,15 @@ html {
 .centralPage{
   display: flex;
   justify-content: flex-end;
-  align-items: center;
+  align-items: top;
   overflow: hidden;
 }
 
 .homeImage {
   width: 50%;
-  height: 90vh;
+  height: 85vh;
+}
+
+.App{
+  height: 100%;
 }

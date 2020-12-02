@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Book from '../components/Book';
+import SearchBar from '../components/SearchBar';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { setBooks } from '../actions/index';
@@ -8,11 +9,12 @@ class BooksList extends Component {
   constructor(){
     super()
     this.state={
-      books:[]
+      books:[],
+      query:""
     }
   }
   componentWillMount(){
-  fetch("https://www.googleapis.com/books/v1/volumes?q=title:motivation")
+  fetch(`https://www.googleapis.com/books/v1/volumes?q=title:${this.state.query}`)
   .then(function (res) {
     return res.json();
   })
@@ -21,17 +23,23 @@ class BooksList extends Component {
     this.setState({books:items})
   });
   }
+
+    searchFor = (event)=>{
+      this.setState({query:event.target.value});
+    }
     render(){
         return(
-          <div className="booksList">
-          
-            {this.state.books.map((book, index)=>{
-              return <Book key = {index} book= {book}/>
-            })}
-        </div>
+          <div className="booksPage">
+            <SearchBar searchFor={this.searchBooks}/>
+            <div className="booksList">
+              {this.state.books.map((book, index)=>{
+                return <Book key = {index} book= {book}/>
+              })}
+            </div>
+          </div>
       )
     }
-  }
+}
 
 function mapStateToProps(state){
   return{

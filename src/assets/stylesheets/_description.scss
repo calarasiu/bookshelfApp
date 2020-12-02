@@ -3,7 +3,7 @@
   justify-content: flex-start;
   margin-left: 10%;
   padding-right: 10%;
-  margin-top: 1rem;
+  margin-top: 3rem;
 
 } 
 .left-side * {
@@ -21,4 +21,10 @@ button{
   font-size: large;
   color: #ffffff;
   -webkit-text-stroke: 0.4px black;
+}
+
+.nav-title a{
+  text-decoration: none;
+  color: black;
+
 }
