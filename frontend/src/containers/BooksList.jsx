@@ -29,7 +29,6 @@ class BooksList extends Component {
   }
 
     searchFor = (event)=>{
-      console.log(event.target.value);
       this.setState({query:event.target.value});
       this.getBooks();
     }
