@@ -43,14 +43,37 @@ app.post('/register', (req, res)=>{
   res.json(database.users[database.users.length-1])
 })
 
+app.post('/login',(req, res)=>{
+  const {name, city} = req.body;
+  database.users.forEach((user)=>{
+    if(user.name === name && user.city===city){
+      res.send(user);
+    }else{
+      res.send('Wrong credentials. Please try again!');
+    }
+
+  })
+})
+
+app.get('/profile/:userId', (req, res)=>{
+  const{userId} = req.params;
+  database.users.forEach((user)=>{
+    if(user.id === userId){
+      res.json(user);
+    }else{
+      res.status(404).json('User not found');
+    }
+  })
+})
+
 app.listen(3000, ()=>{
   console.log("The app is running on port 3000");
 });
 
 // the api routes
 // /
-// /login - post - success/ fail 
 // /register - post - user
+// /login - post - success/ fail 
 // /profile/:userId - get - user
 // /books - get - booksList
 // /book/:bookId - book
